@@ -18,8 +18,6 @@ addBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", setPage)
 
-document.addEventListener("click", increaseLikes)
-
 function setPage() {
   fetchToys()
   addSubmitListener()
@@ -107,21 +105,12 @@ function createToy(e) {
 
 function increaseLikes(e) {
   e.preventDefault()
-  // let likeButton = document.querySelector(".like-btn")
+  let likesNum = e.target.parentElement.children[2].textContent.split(" ")[0]
+  let numNum = parseInt(likesNum)
+  numNum += 1
+  console.log("test")
+  e.target.parentElement.children[2].innerText = `${numNum} Likes`
 
-  // set conditional -- if e.target is a like button do stuff, if not, do nothing.
-
-  // if (e.target === likeButton)
-  //   console.log ("I finds you!")
-let likesNum = e.target.parentElement.children[2].textContent.split(" ")[0]
-let numNum = parseInt(likesNum)
-numNum += 1
-
-
-// if true, find number of likes within parent element
-
-// then increment by one like when clicked
-
-// then do fetch post to update
+// finished adapting front end, need to persist changes to server
 
 }
